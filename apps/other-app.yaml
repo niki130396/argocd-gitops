@@ -9,7 +9,7 @@ spec:
   destination:
     namespace: other-namespace
     server: https://kubernetes.default.svc
-  project: default
+  project: my-project
   source:
     path: other-app
     repoURL: git@github.com:niki130396/argocd-gitops.git
