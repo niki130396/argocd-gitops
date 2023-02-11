@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: guestbook-prod
+spec:
+  ports:
+  - port: 81
+    targetPort: 80
+  selector:
+    app: guestbook-prod
+  type: LoadBalancer
