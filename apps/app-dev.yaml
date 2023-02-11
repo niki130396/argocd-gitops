@@ -14,3 +14,6 @@ spec:
     path: guestbook-dev
     repoURL: git@github.com:niki130396/argocd-gitops.git
     targetRevision: HEAD
+  syncPolicy:
+    automated:
+      selfHeal: true
