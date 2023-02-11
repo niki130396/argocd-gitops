@@ -1,21 +1,21 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: other-app
-  namespace: other-namespace
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
-spec:
-  destination:
-    namespace: other-namespace
-    server: https://kubernetes.default.svc
-  project: default
-  source:
-    path: other-app
-    repoURL: git@github.com:niki130396/argocd-gitops.git
-    targetRevision: HEAD
-  syncPolicy:
-    automated:
-      selfHeal: true
-    syncOptions:
-    - CreateNamespace=true
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: other-app
+#  namespace: other-namespace
+#  finalizers:
+#  - resources-finalizer.argocd.argoproj.io
+#spec:
+#  destination:
+#    namespace: other-namespace
+#    server: https://kubernetes.default.svc
+#  project: default
+#  source:
+#    path: other-app
+#    repoURL: git@github.com:niki130396/argocd-gitops.git
+#    targetRevision: HEAD
+#  syncPolicy:
+#    automated:
+#      selfHeal: true
+#    syncOptions:
+#    - CreateNamespace=true
