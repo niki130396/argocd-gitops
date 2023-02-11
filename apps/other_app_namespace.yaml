@@ -1,6 +1,6 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: other_app
+  name: other-namespace
   labels:
-    name: other_app
+    name: other-namespace
