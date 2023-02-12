@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app3-dev
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: namespace3
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: manifests/app2-dev
+    repoURL: git@github.com:niki130396/argocd-gitops.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+    retry:
+      limit: 2
+      backoff:
+        duration: "5s"
+        factor: 2
+        maxDuration: "3m0s"
