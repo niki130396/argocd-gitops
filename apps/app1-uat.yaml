@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-prod
-  namespace: argocd
+  name: app1-uat
+  namespace: namespace1
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: argocd
+    namespace: namespace1
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: guestbook-prod
+    path: manifests/app1-uat
     repoURL: git@github.com:niki130396/argocd-gitops.git
     targetRevision: HEAD
   syncPolicy:
