@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: app1-prod
-  namespace: namespace1
+  namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
